@@ -4,8 +4,9 @@ import (
 	"bytes"
 	"embed"
 	"errors"
-	"io/ioutil"
+	"io"
 	"net/http"
+	"os"
 	"strings"
 	"text/template"
 )
@@ -71,7 +72,7 @@ func (r Redoc) Handler() http.HandlerFunc {
 
 	var spec []byte
 	if r.SpecFS == nil {
-		spec, err = ioutil.ReadFile(specFile)
+		spec, err = os.ReadFile(specFile)
 		if err != nil {
 			panic(err)
 		}
