@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"embed"
 	"errors"
-	"io"
 	"net/http"
 	"os"
 	"strings"
